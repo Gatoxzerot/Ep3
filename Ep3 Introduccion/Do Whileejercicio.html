@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Cuadro de Círculos 10x10</title>
+<style>
+    .contenedor {
+        display: flex;
+        flex-wrap: wrap;
+        width: 500px; /* Ajustar el tamaño según sea necesario */
+    }
+    .circulo {
+        width: 40px;
+        height: 40px;
+        background-color: #329e5c;
+        border-radius: 50%;
+        margin: 5px;
+    }
+</style>
+</head>
+<body>
+
+<h2>Cuadro de Círculos 10x10</h2>
+
+<div class="contenedor" id="contenedorCirculos"></div>
+
+<script>
+// Obtener el contenedor donde se van a agregar los círculos
+var contenedorCirculos = document.getElementById("contenedorCirculos");
+
+var fila = 1;
+do {
+    var columna = 1;
+    do {
+        var circulo = document.createElement("div");
+        circulo.className = "circulo";
+        contenedorCirculos.appendChild(circulo);
+        columna++;
+    } while (columna <= 10);
+    fila++;
+} while (fila <= 10);
+</script>
+
+</body>
+</html>

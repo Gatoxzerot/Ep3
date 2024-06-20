@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Encabezados de Nivel</title>
+</head>
+<body>
+
+<div id="encabezados"></div>
+
+<script>
+// Obtener el div donde se mostrarán los encabezados
+var encabezadosDiv = document.getElementById("encabezados");
+
+// Bucle for para generar los encabezados del h1 al h6
+for (var nivel = 1; nivel <= 6; nivel++) {
+    var encabezado = document.createElement("h" + nivel); // Crear el elemento h1, h2, ..., h6
+    encabezado.textContent = "Encabezado de nivel " + nivel; // Establecer el texto del encabezado
+    encabezadosDiv.appendChild(encabezado); // Agregar el encabezado al div
+}
+</script>
+
+</body>
+</html>

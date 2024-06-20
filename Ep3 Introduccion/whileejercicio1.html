@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Cálculo de Números Pares y Media Aritmética</title>
+</head>
+<body>
+
+<h2>Cálculo de los 4 primeros números pares y su media aritmética</h2>
+
+<div>
+    <label for="numeroInput">Ingrese un número:</label>
+    <input type="number" id="numeroInput" placeholder="Ingrese un número">
+    <button onclick="calcularNumerosPares()">Calcular</button>
+</div>
+
+<div id="resultado"></div>
+
+<script>
+function calcularNumerosPares() {
+    var numeroIngresado = parseInt(document.getElementById("numeroInput").value);
+
+    if (isNaN(numeroIngresado)) {
+        alert("Por favor ingrese un número válido.");
+        return;
+    }
+
+    // Declaración de variables
+    var contador = 0; // Contador para llevar la cuenta de los números pares encontrados
+    var suma = 0; // Variable para almacenar la suma de los números pares
+    var numero = numeroIngresado; // Variable para almacenar el número actual que se está evaluando
+
+    // Bucle while para encontrar los 4 primeros números pares
+    while (contador < 4) {
+        if (numero % 2 === 0) { // Si el número es par
+            suma += numero; // Agregar el número a la suma
+            contador++; // Incrementar el contador de números pares encontrados
+        }
+        numero++; // Incrementar el número actual
+    }
+
+    // Calcular la media aritmética de los números pares
+    var media = suma / 4; // Dividir la suma entre la cantidad de números pares (4 en este caso)
+
+    // Mostrar los resultados
+    var resultadoDiv = document.getElementById("resultado");
+    resultadoDiv.innerHTML = ""; // Limpiar el contenido previo
+
+    var parrafo1 = document.createElement("p");
+    parrafo1.textContent = "Los 4 primeros números pares a partir de " + numeroIngresado + " son:";
+    resultadoDiv.appendChild(parrafo1);
+
+    var parrafo2 = document.createElement("p");
+    parrafo2.textContent = "Suma: " + suma;
+    resultadoDiv.appendChild(parrafo2);
+
+    var parrafo3 = document.createElement("p");
+    parrafo3.textContent = "Media aritmética: " + media;
+    resultadoDiv.appendChild(parrafo3);
+}
+</script>
+
+</body>
+</html>

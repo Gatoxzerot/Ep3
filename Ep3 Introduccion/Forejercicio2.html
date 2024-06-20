@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Números Múltiplos de 7 (Exclusión de 120 a 180)</title>
+</head>
+<body>
+
+<h2>Números Múltiplos de 7 entre 100 y 300 (Excluyendo de 120 a 180)</h2>
+
+<div id="resultado"></div>
+
+<script>
+// Obtener el div donde se mostrarán los resultados
+var resultadoDiv = document.getElementById("resultado");
+
+// Bucle for para imprimir los múltiplos de 7 entre 100 y 300 excluyendo los entre 120 y 180
+for (var i = 100; i <= 300; i++) {
+    if (i % 7 === 0 && (i < 120 || i > 180)) {
+        var parrafo = document.createElement("p"); // Crear un nuevo párrafo
+        parrafo.textContent = i; // Establecer el contenido del párrafo con el número i
+        resultadoDiv.appendChild(parrafo); // Agregar el párrafo al div de resultados
+    }
+}
+</script>
+
+</body>
+</html>
